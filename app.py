@@ -1,25 +1,28 @@
 import streamlit as st
-import pandas as pd
-import numpy as np
-# Carregar os dados
 
+st.set_page_config(
+    page_title="Hello",
+    page_icon="👋",
+)
 
-def load_data():
-    data = pd.read_csv('netflix_titles.csv')  # Substitua pelo seu arquivo
-    return data
-data = load_data()
-# Título
-st.title("Análise de Dados")
-# Mostrar os dados
-if st.checkbox('Mostrar dados'):
-    st.write(data)
-# Análise simples
-st.subheader("Estatísticas descritivas")
-st.write(data.describe())
-# Gráficos
-st.subheader("Gráfico de dispersão")
-x_axis = st.selectbox("Escolha a variável do eixo X", data.columns)
-y_axis = st.selectbox("Escolha a variável do eixo Y", data.columns)
-st.write("Gráfico de dispersão entre", x_axis, "e", y_axis)
-st.scatter_chart(data[[x_axis, y_axis]])
-# Adicione mais análises conforme necessário
+st.write("# Welcome to Streamlit! 👋")
+
+st.sidebar.success("Select a demo above.")
+
+st.markdown(
+    """
+    Streamlit is an open-source app framework built specifically for
+    Machine Learning and Data Science projects.
+    **👈 Select a demo from the sidebar** to see some examples
+    of what Streamlit can do!
+    ### Want to learn more?
+    - Check out [streamlit.io](https://streamlit.io)
+    - Jump into our [documentation](https://docs.streamlit.io)
+    - Ask a question in our [community
+        forums](https://discuss.streamlit.io)
+    ### See more complex demos
+    - Use a neural net to [analyze the Udacity Self-driving Car Image
+        Dataset](https://github.com/streamlit/demo-self-driving)
+    - Explore a [New York City rideshare dataset](https://github.com/streamlit/demo-uber-nyc-pickups)
+"""
+)
